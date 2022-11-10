@@ -6,6 +6,7 @@ executors:
 jobs:
   build:
     executor: exectr
+    working_directory: /tmp
     steps:
       - checkout
       - run:
@@ -30,6 +31,17 @@ jobs:
             ctest --verbose
       - store_test_results:
           path: build
+      - run:
+        name: Creating Artifacts
+        command: |
+          echo "libcsgp4.a" > /tmp/art-1;
+          mkdir /tmp/artifacts;
+          echo "my artifact files in a dir" > /tmp/artifacts/art-2;
+    - store_artifacts:
+        path: /tmp/art-1
+        destination: libcsgp4.a
+    - store_artifacts:
+        path: /tmp/artifacts
 workflows:
   version: 2
   build-and-test:
@@ -38,4 +50,24 @@ workflows:
       - test:
           requires:
             - build
+            
+
+version: 2
+jobs:
+build:
+  working_directory: /tmp
+  steps:
+    - run:
+        name: Creating Dummy Artifacts
+        command: |
+          echo "my artifact file" > /tmp/art-1;
+          mkdir /tmp/artifacts;
+          echo "my artifact files in a dir" > /tmp/artifacts/art-2;
+
+    - store_artifacts:
+        path: /tmp/art-1
+        destination: artifact-file
+
+    - store_artifacts:
+        path: /tmp/artifacts
             

@@ -20,11 +20,11 @@ SET(libcsgp4_SRCS
     SGP4.cpp
 )
 
-ADD_LIBRARY(libcsgp4
+ADD_LIBRARY(csgp4
     ${libcsgp4_SRCS}
 )
 
-TARGET_LINK_LIBRARIES(libcsgp4
+TARGET_LINK_LIBRARIES(csgp4
     rt
 )
 
