@@ -7,7 +7,7 @@ This libray is derived from/forked off Danial Warner's sgp4 library.
 Changed include:-
 
 * Use of "csgp4" namespace for all objects, methods and functions
-* Added the ability to create a TLE from raw args where the Eposh is defined by ISO8601 as used by Celestrak JSON
+* Added the ability to create a TLE from raw args where the Epoch is defined by ISO8601 as used by Celestrak JSON
 * Added Unit Test suite.
 
 
