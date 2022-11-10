@@ -9,12 +9,6 @@ jobs:
     steps:
       - checkout
       - run:
-          name: Setup gtest child repo
-          command: |
-            cd third_party
-            git submodule init
-            git submodule update 
-      - run:
           name: Setup cmake and build artifacts
           command: |
             mkdir build
