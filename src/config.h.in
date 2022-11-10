@@ -1,0 +1,12 @@
+
+
+
+
+#ifndef CONFIG_H_IN
+#define CONFIG_H_IN
+
+#define GIT_TAG "@GIT_TAG@"
+#define LIBCSGP4_VERSION "@LIBCSGP4_VERSION@"
+
+#endif
+
