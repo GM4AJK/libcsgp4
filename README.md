@@ -1,6 +1,5 @@
 
-SGP4 library
-============
+# SGP4 library
 
 This libray is derived from/forked off Danial Warner's sgp4 library.
 
@@ -12,8 +11,8 @@ Changed include:-
 * Added Github Unit Test build actions
 
 
-License
--------
+## License
+
 
     Copyright 2017 Daniel Warner
     Copyright 2022 Andy Kirkham
