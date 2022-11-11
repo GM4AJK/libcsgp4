@@ -42,11 +42,11 @@ TEST(Overview_case, Overview_demo)
     // Begin by defining an Observer position on Earth
     csgp4::CoordGeodetic obs_pos(51.0, -3.0, 10);
     
-    // Next define an observer (which is a position at a specifi time)
+    // Next define an observer (which is a position at a specific time)
     csgp4::Observer observer(obs_pos);
     
     // Next, define a TLE for the satellite of interest
-    std::string line0("");
+    std::string line0("ISS");
     std::string line1("1 25544U 98067A   22315.39284736  .00014043  00000-0  25399-3 0  9998");
     std::string line2("2 25544  51.6439 327.3552 0006927  60.3945  19.4853 15.49940881368015");
     csgp4::Tle tle = csgp4::Tle(line0, line1, line2);
