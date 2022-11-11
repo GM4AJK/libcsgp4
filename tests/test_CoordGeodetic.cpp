@@ -26,6 +26,7 @@
 #include <gtest/gtest.h>
 
 #include "CoordGeodetic.h"
+#include "common.h"
 
 TEST(CoordGeodetic_test_case, CoordGeodetic_ctor)
 {

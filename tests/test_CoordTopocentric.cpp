@@ -26,8 +26,7 @@
 #include <gtest/gtest.h>
 
 #include "CoordTopocentric.h"
-
-static double d2r(double d) { return d * (M_PI/180.0); }
+#include "common.h"
 
 TEST(CoordTopocentric_test_case, CoordTopocentric_ctor_4)
 {
