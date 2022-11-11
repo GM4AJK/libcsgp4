@@ -48,4 +48,5 @@ TEST(SGP4_test_case, SGP4_pos_at_epoch)
     std::string expect = expected();;
     std::string actual = dut.ToString();
     EXPECT_STREQ(expect.c_str(), actual.c_str());
+    EXPECT_EQ(, 10); // Deliberate fail to test GH on.pull-request action prevents merge
 }
