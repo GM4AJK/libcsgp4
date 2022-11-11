@@ -14,6 +14,11 @@ jobs:
             make
       - persist_to_workspace:
           root: .
+          path: build
+  test:
+    steps:
+      - attach_workspace:
+          at: ./
       - run:
           name: Execute Tests
           command: |
@@ -24,3 +29,6 @@ workflows:
   build-and-test:
     jobs:
       - build
+      - test:
+          requires:
+            - build
