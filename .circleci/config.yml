@@ -22,8 +22,6 @@ jobs:
   test:
     executor: exectr
     steps:
-      - attach_workspace:
-          at: .
       - run:
           name: Execute Tests
           command: |
