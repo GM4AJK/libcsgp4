@@ -28,8 +28,6 @@ jobs:
           command: |
             cd build
             ctest --verbose --output-junit unittestresults.xml
-      - store_test_results:
-          path: build
 workflows:
   version: 2
   build-and-test:
