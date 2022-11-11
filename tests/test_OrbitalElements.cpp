@@ -27,10 +27,7 @@
 
 #include "Tle.h"
 #include "OrbitalElements.h"
-
-static std::string iss_tle0("ISS");
-static std::string iss_tle1("1 25544U 98067A   22314.50373836  .00014546  00000-0  26300-3 0  9991");
-static std::string iss_tle2("2 25544  51.6436 331.7596 0006814  57.2751  98.3376 15.49917581367874");
+#include "common.h"
 
 static std::string expected()
 {

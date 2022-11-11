@@ -36,4 +36,5 @@ ADD_SGP4_TEST(test_Tle)
 ADD_SGP4_TEST(test_SolarPosition)
 ADD_SGP4_TEST(test_OrbitalElements)
 ADD_SGP4_TEST(test_SGP4)
+ADD_SGP4_TEST(test_Overview)
 
