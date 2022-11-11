@@ -17,8 +17,7 @@ jobs:
             make
       - persist_to_workspace:
           root: .
-          paths: 
-            - build
+          path: build
   test:
     executor: exectr
     steps:
