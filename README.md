@@ -8,7 +8,8 @@ Changed include:-
 
 * Use of "csgp4" namespace for all objects, methods and functions
 * Added the ability to create a TLE from raw args where the Epoch is defined by ISO8601 as used by Celestrak JSON
-* Added Unit Test suite.
+* Added Unit Test suite
+* Added Github Unit Test build actions
 
 
 License
