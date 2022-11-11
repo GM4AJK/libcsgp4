@@ -2,7 +2,7 @@ version: 2.1
 executors:
   exectr:
     docker:
-      - image: andykirkham/dockerfilerepositoryforcpp
+      - image: andykirkham/dockerfilerepositoryforcpp:latest
 jobs:
   build:
     executor: exectr
