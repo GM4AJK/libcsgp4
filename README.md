@@ -1,4 +1,6 @@
 
+![Build Status](https://github.com/GM4AJK/libcsgp4/actions/workflows/cmake.yml/badge.svg)
+
 # SGP4 library
 
 This libray is derived from/forked off Danial Warner's sgp4 library.
