@@ -1,11 +1,8 @@
 version: 2.1
-executors:
-  exectr:
-    docker:
-      - image: andykirkham/dockerfilerepositoryforcpp:latest
 jobs:
   build:
-    executor: exectr
+    docker:
+      - image: andykirkham/dockerfilerepositoryforcpp:latest
     steps:
       - checkout
       - run:
@@ -17,12 +14,6 @@ jobs:
             make
       - persist_to_workspace:
           root: .
-          path: build
-  test:
-    executor: exectr
-    steps:
-      - attach_workspace:
-          at: ./
       - run:
           name: Execute Tests
           command: |
