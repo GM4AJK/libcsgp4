@@ -12,6 +12,9 @@ Changes include:-
 * Added Unit Test suite
 * Added Github Unit Test build actions
 
+## Example Usage
+
+Please see the [overview test case](https://github.com/GM4AJK/libcsgp4/blob/master/tests/test_Overview.cpp)
 
 ## License
 
