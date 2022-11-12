@@ -15,12 +15,11 @@
  * limitations under the License.
  */
 
-
 #ifndef OBSERVER_H_
 #define OBSERVER_H_
 
-#include "CoordGeodetic.h"
-#include "Eci.h"
+#include "csgp4/Eci.h"
+#include "csgp4/CoordGeodetic.h"
 
 namespace csgp4
 {

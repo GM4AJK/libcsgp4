@@ -25,9 +25,9 @@
 #include <sstream>
 #include <gtest/gtest.h>
 
-#include "Tle.h"
-#include "OrbitalElements.h"
 #include "common.h"
+#include "csgp4/Tle.h"
+#include "csgp4/OrbitalElements.h"
 
 static std::string expected()
 {

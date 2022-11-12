@@ -26,7 +26,7 @@
 #include <gtest/gtest.h>
 
 #include "config.h"
-#include "Vector.h"
+#include "csgp4/Vector.h"
 
 TEST(Vector_suite, Vector_base_ctor)
 {

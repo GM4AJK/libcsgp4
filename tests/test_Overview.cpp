@@ -29,13 +29,13 @@
 #include <sstream>
 #include <gtest/gtest.h>
 
-#include "Tle.h"
-#include "SGP4.h"
-#include "DateTime.h"
-#include "Observer.h"
-#include "CoordGeodetic.h"
-#include "OrbitalElements.h"
-#include "CoordTopocentric.h"
+#include "csgp4/Tle.h"
+#include "csgp4/SGP4.h"
+#include "csgp4/DateTime.h"
+#include "csgp4/Observer.h"
+#include "csgp4/CoordGeodetic.h"
+#include "csgp4/OrbitalElements.h"
+#include "csgp4/CoordTopocentric.h"
 
 TEST(Overview_suite, Overview_demo)
 {

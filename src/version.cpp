@@ -1,6 +1,6 @@
 
-#include "config.h"
-#include "version.h"
+#include "csgp4/config.h"
+#include "csgp4/version.h"
 
 #include <sstream>
 

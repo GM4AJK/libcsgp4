@@ -25,8 +25,8 @@
 #include <sstream>
 #include <gtest/gtest.h>
 
-#include "CoordGeodetic.h"
 #include "common.h"
+#include "csgp4/CoordGeodetic.h"
 
 TEST(CoordGeodetic_suite, CoordGeodetic_ctor)
 {

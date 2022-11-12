@@ -16,13 +16,13 @@
  */
 
 
-#include "SGP4.h"
+#include "csgp4/SGP4.h"
 
-#include "Util.h"
-#include "Vector.h"
-#include "SatelliteException.h"
-#include "DecayedException.h"
-#include "OrbitalElements.h"
+#include "csgp4/Util.h"
+#include "csgp4/Vector.h"
+#include "csgp4/SatelliteException.h"
+#include "csgp4/DecayedException.h"
+#include "csgp4/OrbitalElements.h"
 
 #include <cmath>
 #include <iomanip>

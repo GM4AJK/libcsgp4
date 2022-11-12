@@ -19,7 +19,7 @@
 #ifndef COORDTOPOCENTRIC_H_
 #define COORDTOPOCENTRIC_H_
 
-#include "Util.h"
+#include "csgp4/Util.h"
 
 #include <string>
 #include <sstream>

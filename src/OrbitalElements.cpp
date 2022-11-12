@@ -15,9 +15,9 @@
  */
 
 
-#include "OrbitalElements.h"
+#include "csgp4/OrbitalElements.h"
 
-#include "Tle.h"
+#include "csgp4/Tle.h"
 
 namespace csgp4
 {

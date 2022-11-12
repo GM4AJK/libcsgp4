@@ -14,10 +14,8 @@
  * limitations under the License.
  */
 
-
-#include "Observer.h"
-
-#include "CoordTopocentric.h"
+#include "csgp4/Observer.h"
+#include "csgp4/CoordTopocentric.h"
 
 namespace csgp4
 {

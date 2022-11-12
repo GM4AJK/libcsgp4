@@ -15,13 +15,12 @@
  * limitations under the License.
  */
 
-
 #ifndef ECI_H_
 #define ECI_H_
 
-#include "CoordGeodetic.h"
-#include "Vector.h"
-#include "DateTime.h"
+#include "csgp4/DateTime.h"
+#include "csgp4/Vector.h"
+#include "csgp4/CoordGeodetic.h"
 
 namespace csgp4
 {

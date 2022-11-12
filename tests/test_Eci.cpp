@@ -25,7 +25,7 @@
 #include <sstream>
 #include <gtest/gtest.h>
 
-#include "Eci.h"
+#include "csgp4/Eci.h"
 
 static std::string expected()
 {

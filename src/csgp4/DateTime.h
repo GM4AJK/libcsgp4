@@ -25,8 +25,8 @@
 #include <chrono>
 #include <algorithm>
 #include <cassert>
-#include "TimeSpan.h"
-#include "Util.h"
+#include "csgp4/Util.h"
+#include "csgp4/TimeSpan.h"
 
 namespace
 {

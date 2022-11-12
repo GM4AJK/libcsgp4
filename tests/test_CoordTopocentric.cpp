@@ -25,8 +25,8 @@
 #include <sstream>
 #include <gtest/gtest.h>
 
-#include "CoordTopocentric.h"
 #include "common.h"
+#include "csgp4/CoordTopocentric.h"
 
 TEST(CoordTopocentric_suite, CoordTopocentric_ctor_4)
 {

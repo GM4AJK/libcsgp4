@@ -23,8 +23,8 @@
 #include <sstream>
 #include <gtest/gtest.h>
 
-#include "config.h"
-#include "version.h"
+#include "csgp4/config.h"
+#include "csgp4/version.h"
 
 using csgp4::version;
 

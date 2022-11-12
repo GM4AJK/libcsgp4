@@ -25,7 +25,7 @@
 #include <sstream>
 #include <gtest/gtest.h>
 
-#include "TimeSpan.h"
+#include "csgp4/TimeSpan.h"
 
 TEST(TimeSpan_suite, TimeSpan_ctor_3)
 {

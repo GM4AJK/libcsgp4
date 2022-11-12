@@ -25,7 +25,7 @@
 #include <sstream>
 #include <gtest/gtest.h>
 
-#include "SolarPosition.h"
+#include "csgp4/SolarPosition.h"
 
 static std::string expect_sun()
 {

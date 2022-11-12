@@ -25,7 +25,7 @@
 #include <sstream>
 #include <gtest/gtest.h>
 
-#include "Observer.h"
+#include "csgp4/Observer.h"
 
 TEST(Observer_suite, Observer_ctor_4args)
 {

@@ -25,7 +25,7 @@
 #include <sstream>
 #include <gtest/gtest.h>
 
-#include "DateTime.h"
+#include "csgp4/DateTime.h"
 
 TEST(DateTime_suite, DateTime_ctor_0args)
 {
