@@ -28,7 +28,7 @@
 #include "CoordTopocentric.h"
 #include "common.h"
 
-TEST(CoordTopocentric_test_case, CoordTopocentric_ctor_4)
+TEST(CoordTopocentric_suite, CoordTopocentric_ctor_4)
 {
     csgp4::CoordTopocentric ct(d2r(180.0), d2r(45.0), 1000, 500);
     std::string expect = std::string("Az:  180.000, El:   45.000, Rng:   1000.000, Rng Rt: 500.000");

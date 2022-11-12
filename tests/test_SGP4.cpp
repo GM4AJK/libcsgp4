@@ -40,7 +40,7 @@ static std::string expected()
     return oss.str();
 }
 
-TEST(SGP4_test_case, SGP4_pos_at_epoch)
+TEST(SGP4_suite, SGP4_pos_at_epoch)
 {
     csgp4::Tle tle(iss_tle0, iss_tle1, iss_tle2);
     csgp4::SGP4 sgp4(tle);

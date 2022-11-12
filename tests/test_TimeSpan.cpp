@@ -27,7 +27,7 @@
 
 #include "TimeSpan.h"
 
-TEST(TimeSpan_test_case, TimeSpan_ctor_3)
+TEST(TimeSpan_suite, TimeSpan_ctor_3)
 {
     csgp4::TimeSpan ts(23, 59, 59);
     std::string expect = std::string("23:59:59");
@@ -35,7 +35,7 @@ TEST(TimeSpan_test_case, TimeSpan_ctor_3)
     EXPECT_STREQ(expect.c_str(), actual.c_str());
 }    
 
-TEST(TimeSpan_test_case, TimeSpan_ctor_4)
+TEST(TimeSpan_suite, TimeSpan_ctor_4)
 {
     csgp4::TimeSpan ts(1, 23, 59, 59);
     std::string expect = std::string("01.23:59:59");
@@ -43,7 +43,7 @@ TEST(TimeSpan_test_case, TimeSpan_ctor_4)
     EXPECT_STREQ(expect.c_str(), actual.c_str());
 }    
 
-TEST(TimeSpan_test_case, TimeSpan_ctor_5)
+TEST(TimeSpan_suite, TimeSpan_ctor_5)
 {
     csgp4::TimeSpan ts(1, 23, 59, 59, 500);
     std::string expect = std::string("01.23:59:59.000500");
@@ -51,7 +51,7 @@ TEST(TimeSpan_test_case, TimeSpan_ctor_5)
     EXPECT_STREQ(expect.c_str(), actual.c_str());
 }    
 
-TEST(TimeSpan_test_case, TimeSpan_Add)
+TEST(TimeSpan_suite, TimeSpan_Add)
 {
     csgp4::TimeSpan tsn(0,  0,  0);
     csgp4::TimeSpan ts1(1, 23, 59, 59);
@@ -62,7 +62,7 @@ TEST(TimeSpan_test_case, TimeSpan_Add)
     EXPECT_STREQ(expect.c_str(), actual.c_str());
 }    
 
-TEST(TimeSpan_test_case, TimeSpan_Subtract)
+TEST(TimeSpan_suite, TimeSpan_Subtract)
 {
     csgp4::TimeSpan tsn(0,  0,  0);
     csgp4::TimeSpan ts1(2, 23, 59, 59);
@@ -73,42 +73,42 @@ TEST(TimeSpan_test_case, TimeSpan_Subtract)
     EXPECT_STREQ(expect.c_str(), actual.c_str());
 }    
 
-TEST(TimeSpan_test_case, TimeSpan_Compare_Equal)
+TEST(TimeSpan_suite, TimeSpan_Compare_Equal)
 {
     csgp4::TimeSpan ts1(1, 23, 59, 59);
     csgp4::TimeSpan ts2(1, 23, 59, 59);
     EXPECT_EQ(0, ts1.Compare(ts2));
 }    
 
-TEST(TimeSpan_test_case, TimeSpan_Compare_Greater)
+TEST(TimeSpan_suite, TimeSpan_Compare_Greater)
 {
     csgp4::TimeSpan ts1(0, 23, 59, 59);
     csgp4::TimeSpan ts2(1, 23, 59, 59);
     EXPECT_EQ(-1, ts1.Compare(ts2));
 }    
 
-TEST(TimeSpan_test_case, TimeSpan_Compare_Less)
+TEST(TimeSpan_suite, TimeSpan_Compare_Less)
 {
     csgp4::TimeSpan ts1(1, 23, 59, 59);
     csgp4::TimeSpan ts2(0, 23, 59, 59);
     EXPECT_EQ(1, ts1.Compare(ts2));
 }    
 
-TEST(TimeSpan_test_case, TimeSpan_Equal_To)
+TEST(TimeSpan_suite, TimeSpan_Equal_To)
 {
     csgp4::TimeSpan ts1(1, 23, 59, 59);
     csgp4::TimeSpan ts2(1, 23, 59, 59);
     EXPECT_EQ(true, ts1.Equals(ts2));
 }    
 
-TEST(TimeSpan_test_case, TimeSpan_Not_Equal_To)
+TEST(TimeSpan_suite, TimeSpan_Not_Equal_To)
 {
     csgp4::TimeSpan ts1(0, 23, 59, 59);
     csgp4::TimeSpan ts2(1, 23, 59, 59);
     EXPECT_EQ(false, ts1.Equals(ts2));
 }    
 
-TEST(TimeSpan_test_case, TimeSpan_streamable)
+TEST(TimeSpan_suite, TimeSpan_streamable)
 {
     std::stringstream actual;
     csgp4::TimeSpan ts(23, 59, 59);
@@ -117,7 +117,7 @@ TEST(TimeSpan_test_case, TimeSpan_streamable)
     EXPECT_STREQ(expect.c_str(), actual.str().c_str());
 }    
 
-TEST(TimeSpan_test_case, TimeSpan_Operator_Add)
+TEST(TimeSpan_suite, TimeSpan_Operator_Add)
 {
     csgp4::TimeSpan tsn(0,  0,  0);
     csgp4::TimeSpan ts1(1, 23, 59, 59);
@@ -128,7 +128,7 @@ TEST(TimeSpan_test_case, TimeSpan_Operator_Add)
     EXPECT_STREQ(expect.c_str(), actual.c_str());
 }    
 
-TEST(TimeSpan_test_case, TimeSpan_Operator_Subtract)
+TEST(TimeSpan_suite, TimeSpan_Operator_Subtract)
 {
     csgp4::TimeSpan tsn(0,  0,  0);
     csgp4::TimeSpan ts1(2, 23, 59, 59);
@@ -139,35 +139,35 @@ TEST(TimeSpan_test_case, TimeSpan_Operator_Subtract)
     EXPECT_STREQ(expect.c_str(), actual.c_str());
 }    
 
-TEST(TimeSpan_test_case, TimeSpan_Operator_Equal_To)
+TEST(TimeSpan_suite, TimeSpan_Operator_Equal_To)
 {
     csgp4::TimeSpan ts1(1, 23, 59, 59);
     csgp4::TimeSpan ts2(1, 23, 59, 59);
     EXPECT_EQ(true, ts1 == ts2);
 }    
 
-TEST(TimeSpan_test_case, TimeSpan_Operator_Not_Equal_To)
+TEST(TimeSpan_suite, TimeSpan_Operator_Not_Equal_To)
 {
     csgp4::TimeSpan ts1(0, 23, 59, 59);
     csgp4::TimeSpan ts2(1, 23, 59, 59);
     EXPECT_EQ(true, ts1 != ts2);
 }    
 
-TEST(TimeSpan_test_case, TimeSpan_Operator_GreaterThan)
+TEST(TimeSpan_suite, TimeSpan_Operator_GreaterThan)
 {
     csgp4::TimeSpan ts1(0, 23, 59, 59);
     csgp4::TimeSpan ts2(1, 23, 59, 59);
     EXPECT_EQ(true, ts2 > ts1);
 }    
 
-TEST(TimeSpan_test_case, TimeSpan_Operator_LessThan)
+TEST(TimeSpan_suite, TimeSpan_Operator_LessThan)
 {
     csgp4::TimeSpan ts1(0, 23, 59, 59);
     csgp4::TimeSpan ts2(1, 23, 59, 59);
     EXPECT_EQ(true, ts1 < ts2);
 }    
 
-TEST(TimeSpan_test_case, TimeSpan_Operator_GreaterThanOrEqual)
+TEST(TimeSpan_suite, TimeSpan_Operator_GreaterThanOrEqual)
 {
     csgp4::TimeSpan ts1(0, 23, 59, 59);
     csgp4::TimeSpan ts2(1, 23, 59, 59);
@@ -176,7 +176,7 @@ TEST(TimeSpan_test_case, TimeSpan_Operator_GreaterThanOrEqual)
     EXPECT_EQ(true, ts2 >= ts3);
 }    
 
-TEST(TimeSpan_test_case, TimeSpan_Operator_LessThanOrEqual)
+TEST(TimeSpan_suite, TimeSpan_Operator_LessThanOrEqual)
 {
     csgp4::TimeSpan ts1(0, 23, 59, 59);
     csgp4::TimeSpan ts2(1, 23, 59, 59);

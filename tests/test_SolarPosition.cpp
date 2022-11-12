@@ -37,7 +37,7 @@ static std::string expect_sun()
 }
 
 
-TEST(SolarPosition_test_case, SolarPosition_FindPosition)
+TEST(SolarPosition_suite, SolarPosition_FindPosition)
 {
     csgp4::SolarPosition sp;
     csgp4::DateTime dt(2022, 12, 25, 0, 0, 0);

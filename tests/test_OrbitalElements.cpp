@@ -46,7 +46,7 @@ static std::string expected()
     return oss.str();
 }
 
-TEST(OrbitalElements_test_case, OrbitalElements_ctor)
+TEST(OrbitalElements_suite, OrbitalElements_ctor)
 {
     csgp4::Tle tle(iss_tle0, iss_tle1, iss_tle2);
     csgp4::OrbitalElements dut(tle);    

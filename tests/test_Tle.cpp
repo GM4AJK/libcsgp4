@@ -54,7 +54,7 @@ static std::string expect_string()
     return iss;
 }
 
-TEST(Tle_test_case, Tle_ctor_2args)
+TEST(Tle_suite, Tle_ctor_2args)
 {
     csgp4::Tle tle(iss_tle1, iss_tle2);
     std::string expect = expect_string();
@@ -62,7 +62,7 @@ TEST(Tle_test_case, Tle_ctor_2args)
     EXPECT_STREQ(expect.c_str(), actual.c_str());
 }
 
-TEST(Tle_test_case, Tle_ctor_3args)
+TEST(Tle_suite, Tle_ctor_3args)
 {
     csgp4::Tle tle(iss_tle0, iss_tle1, iss_tle2);
     std::string expect = expect_string();
@@ -70,7 +70,7 @@ TEST(Tle_test_case, Tle_ctor_3args)
     EXPECT_STREQ(expect.c_str(), actual.c_str());
 }
 
-TEST(Tle_test_case, Tle_Name)
+TEST(Tle_suite, Tle_Name)
 {
     csgp4::Tle tle(iss_tle0, iss_tle1, iss_tle2);
     std::string expect = iss_tle0;
@@ -78,7 +78,7 @@ TEST(Tle_test_case, Tle_Name)
     EXPECT_STREQ(expect.c_str(), actual.c_str());
 }
 
-TEST(Tle_test_case, Tle_Line1)
+TEST(Tle_suite, Tle_Line1)
 {
     csgp4::Tle tle(iss_tle0, iss_tle1, iss_tle2);
     std::string expect = iss_tle1;
@@ -86,7 +86,7 @@ TEST(Tle_test_case, Tle_Line1)
     EXPECT_STREQ(expect.c_str(), actual.c_str());
 }
 
-TEST(Tle_test_case, Tle_Line2)
+TEST(Tle_suite, Tle_Line2)
 {
     csgp4::Tle tle(iss_tle0, iss_tle1, iss_tle2);
     std::string expect = iss_tle2;
@@ -94,7 +94,7 @@ TEST(Tle_test_case, Tle_Line2)
     EXPECT_STREQ(expect.c_str(), actual.c_str());
 }
 
-TEST(Tle_test_case, Tle_NoradNumber)
+TEST(Tle_suite, Tle_NoradNumber)
 {
     csgp4::Tle tle(iss_tle0, iss_tle1, iss_tle2);
     unsigned int expect = 25544;
@@ -102,7 +102,7 @@ TEST(Tle_test_case, Tle_NoradNumber)
     EXPECT_EQ(expect, actual);
 }
 
-TEST(Tle_test_case, Tle_IntDesignator)
+TEST(Tle_suite, Tle_IntDesignator)
 {
     csgp4::Tle tle(iss_tle0, iss_tle1, iss_tle2);
     std::string expect("98067A  ");
@@ -110,7 +110,7 @@ TEST(Tle_test_case, Tle_IntDesignator)
     EXPECT_STREQ(expect.c_str(), actual.c_str());
 }
 
-TEST(Tle_test_case, Tle_Epoch)
+TEST(Tle_suite, Tle_Epoch)
 {
     csgp4::Tle tle(iss_tle0, iss_tle1, iss_tle2);
     std::string expect("2022-11-10 12:05:22.994304 UTC");
@@ -141,7 +141,7 @@ Example of current TLE format in JSON from Celestrak.
 }]
 */
 
-TEST(Tle_test_case, Tle_ctor_Args)
+TEST(Tle_suite, Tle_ctor_Args)
 {
     std::string expect;
     std::string actual;

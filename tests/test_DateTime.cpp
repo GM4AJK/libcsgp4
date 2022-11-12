@@ -27,7 +27,7 @@
 
 #include "DateTime.h"
 
-TEST(DateTime_test_case, DateTime_ctor_0args)
+TEST(DateTime_suite, DateTime_ctor_0args)
 {
     csgp4::DateTime dt;
     std::string expect = std::string("0001-01-01 00:00:00.000000 UTC");
@@ -35,7 +35,7 @@ TEST(DateTime_test_case, DateTime_ctor_0args)
     EXPECT_STREQ(expect.c_str(), actual.c_str());
 }    
 
-TEST(DateTime_test_case, DateTime_ctor_year_doy)
+TEST(DateTime_suite, DateTime_ctor_year_doy)
 {
     csgp4::DateTime dt(2022, 250.56);
     std::string expect = std::string("2022-09-07 13:26:24.000008 UTC");
@@ -43,7 +43,7 @@ TEST(DateTime_test_case, DateTime_ctor_year_doy)
     EXPECT_STREQ(expect.c_str(), actual.c_str());
 }    
 
-TEST(DateTime_test_case, DateTime_ctor_3args)
+TEST(DateTime_suite, DateTime_ctor_3args)
 {
     csgp4::DateTime dt(2022, 6, 4);
     std::string expect = std::string("2022-06-04 00:00:00.000000 UTC");
@@ -51,7 +51,7 @@ TEST(DateTime_test_case, DateTime_ctor_3args)
     EXPECT_STREQ(expect.c_str(), actual.c_str());
 }    
 
-TEST(DateTime_test_case, DateTime_ctor_6args)
+TEST(DateTime_suite, DateTime_ctor_6args)
 {
     csgp4::DateTime dt(2022, 6, 4, 12, 34, 56);
     std::string expect = std::string("2022-06-04 12:34:56.000000 UTC");
@@ -59,7 +59,7 @@ TEST(DateTime_test_case, DateTime_ctor_6args)
     EXPECT_STREQ(expect.c_str(), actual.c_str());
 }    
 
-TEST(DateTime_test_case, DateTime_Initialise)
+TEST(DateTime_suite, DateTime_Initialise)
 {
     csgp4::DateTime dt;
     dt.Initialise(2022, 6, 4, 12, 34, 56, 500000);
@@ -68,7 +68,7 @@ TEST(DateTime_test_case, DateTime_Initialise)
     EXPECT_STREQ(expect.c_str(), actual.c_str());
 }
 
-TEST(DateTime_test_case, DateTime_ctor_Initialise_leapyear)
+TEST(DateTime_suite, DateTime_ctor_Initialise_leapyear)
 {
     csgp4::DateTime dt;
     dt.Initialise(2020, 6, 4, 12, 34, 56, 500000);
@@ -77,34 +77,34 @@ TEST(DateTime_test_case, DateTime_ctor_Initialise_leapyear)
     EXPECT_STREQ(expect.c_str(), actual.c_str());
 }
 
-TEST(DateTime_test_case, DateTime_IsLeapYear)
+TEST(DateTime_suite, DateTime_IsLeapYear)
 {
     EXPECT_TRUE(csgp4::DateTime::IsLeapYear(2020));
     EXPECT_FALSE(csgp4::DateTime::IsLeapYear(2021));
 }
 
-TEST(DateTime_test_case, DateTime_IsValidYear)
+TEST(DateTime_suite, DateTime_IsValidYear)
 {
     EXPECT_TRUE(csgp4::DateTime::IsValidYear(2020));
     EXPECT_FALSE(csgp4::DateTime::IsValidYear(-2021));
     EXPECT_FALSE(csgp4::DateTime::IsValidYear(10001));
 }
 
-TEST(DateTime_test_case, DateTime_IsValidYearMonth)
+TEST(DateTime_suite, DateTime_IsValidYearMonth)
 {
     EXPECT_TRUE(csgp4::DateTime::IsValidYearMonth(2020, 6));
     EXPECT_FALSE(csgp4::DateTime::IsValidYearMonth(2020, -1));
     EXPECT_FALSE(csgp4::DateTime::IsValidYearMonth(2020, 13));
 }
 
-TEST(DateTime_test_case, DateTime_IsValidYearMonthDay)
+TEST(DateTime_suite, DateTime_IsValidYearMonthDay)
 {
     EXPECT_TRUE(csgp4::DateTime::IsValidYearMonthDay(2020, 6, 6));
     EXPECT_TRUE(csgp4::DateTime::IsValidYearMonthDay(2020, 2, 29));
     EXPECT_FALSE(csgp4::DateTime::IsValidYearMonthDay(2021, 2, 29));
 }
 
-TEST(DateTime_test_case, DateTime_DaysInMonth)
+TEST(DateTime_suite, DateTime_DaysInMonth)
 {
     EXPECT_EQ(28, csgp4::DateTime::DaysInMonth(2021, 2));
     EXPECT_EQ(29, csgp4::DateTime::DaysInMonth(2020, 2));

@@ -37,7 +37,7 @@
 #include "OrbitalElements.h"
 #include "CoordTopocentric.h"
 
-TEST(Overview_case, Overview_demo)
+TEST(Overview_suite, Overview_demo)
 {
     // Begin by defining an Observer position on Earth
     csgp4::CoordGeodetic obs_pos(51.0, -3.0, 10);
