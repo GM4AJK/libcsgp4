@@ -1,44 +1,55 @@
-src/config.h
-build/*
-*.com
-*.class
-*.dll
-*.exe
-*.a
-*.o
-*.so
-*.7z
-*.dmg
-*.gz
-*.iso
-*.jar
-*.rar
-*.tar
-*.zip
-*.cbp
-*.log
-*.sql
-*.sqlite
- .DS_Store
-.DS_Store?
-._*
-.Spotlight-V100
-.Trashes
-ehthumbs.db
-Thumbs.db 
-*.vtk
-*.eps
-*.gpl
-*.1
-*.cmake
-Makefile
-CMakeFiles/
-CMakeCache.txt
-.cproject
-.settings/
-.idea/
-build/
-.vscode/
-*.pc
-.clangd/
 
+# Project specific ignores
+
+src/config.h
+[Bb][Uu]{Ii][Ll][Dd]/
+build/
+
+# Common ignores for CPP
+
+# Prerequisites
+*.d
+
+# Compiled Object files
+*.slo
+*.lo
+*.o
+*.obj
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Compiled Dynamic libraries
+*.so
+*.dylib
+*.dll
+
+# Fortran module files
+*.mod
+*.smod
+
+# Compiled Static libraries
+*.lai
+*.la
+*.a
+*.lib
+
+# Executables
+*.exe
+*.out
+*.app
+
+# Common CMake ignores
+
+CMakeLists.txt.user
+CMakeCache.txt
+CMakeFiles
+CMakeScripts
+Testing
+Makefile
+cmake_install.cmake
+install_manifest.txt
+compile_commands.json
+CTestTestfile.cmake
+_deps
