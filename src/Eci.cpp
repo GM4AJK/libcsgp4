@@ -15,11 +15,9 @@
  * limitations under the License.
  */
 
-
-#include "Eci.h"
-
-#include "Globals.h"
-#include "Util.h"
+#include "csgp4/Eci.h"
+#include "csgp4/Util.h"
+#include "csgp4/Globals.h"
 
 namespace csgp4
 {

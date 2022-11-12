@@ -25,8 +25,8 @@
 #include <sstream>
 #include <gtest/gtest.h>
 
-#include "Tle.h"
 #include "common.h"
+#include "csgp4/Tle.h"
 
 static std::string expect_string()
 {

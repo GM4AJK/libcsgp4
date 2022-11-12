@@ -25,7 +25,7 @@
 #include <sstream>
 #include <gtest/gtest.h>
 
-#include "SGP4.h"
+#include "csgp4/SGP4.h"
 
 static std::string iss_tle0("ISS");
 static std::string iss_tle1("1 25544U 98067A   22314.50373836  .00014546  00000-0  26300-3 0  9991");

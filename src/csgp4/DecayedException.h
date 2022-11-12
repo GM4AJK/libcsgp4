@@ -19,11 +19,11 @@
 #ifndef DECAYEDEXCEPTION_H_
 #define DECAYEDEXCEPTION_H_
 
-#include "DateTime.h"
-#include "Vector.h"
-
-#include <stdexcept>
 #include <string>
+#include <stdexcept>
+
+#include "csgp4/Vector.h"
+#include "csgp4/DateTime.h"
 
 namespace csgp4
 {

@@ -16,10 +16,10 @@
  */
 
 
-#include "SolarPosition.h"
+#include "csgp4/SolarPosition.h"
 
-#include "Globals.h"
-#include "Util.h"
+#include "csgp4/Globals.h"
+#include "csgp4/Util.h"
 
 #include <cmath>
 
