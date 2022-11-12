@@ -27,7 +27,7 @@
 
 #include "Observer.h"
 
-TEST(Observer_test_case, Observer_ctor_4args)
+TEST(Observer_suite, Observer_ctor_4args)
 {
     std::stringstream expect;
     csgp4::Observer obs(56, -3, 50);

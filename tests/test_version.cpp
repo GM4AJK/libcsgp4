@@ -28,7 +28,7 @@
 
 using csgp4::version;
 
-TEST(version_test_case, version_test)
+TEST(version_suite, version_test)
 {
 	std::stringstream oss;
 	std::string gittag = std::string(GIT_TAG);

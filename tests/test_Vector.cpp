@@ -28,7 +28,7 @@
 #include "config.h"
 #include "Vector.h"
 
-TEST(Vector_test_case, Vector_base_ctor)
+TEST(Vector_suite, Vector_base_ctor)
 {
     csgp4::Vector v;
     std::string expect = std::string("X:     0.000, Y:     0.000, Z:     0.000, W:     0.000");
@@ -36,7 +36,7 @@ TEST(Vector_test_case, Vector_base_ctor)
     EXPECT_STREQ(expect.c_str(), actual.c_str());
 }    
 
-TEST(Vector_test_case, Vector_base_ctor_with_3values)
+TEST(Vector_suite, Vector_base_ctor_with_3values)
 {
     csgp4::Vector v(1.0, 1.0, 1.0);
     std::string expect = std::string("X:     1.000, Y:     1.000, Z:     1.000, W:     0.000");
@@ -44,7 +44,7 @@ TEST(Vector_test_case, Vector_base_ctor_with_3values)
     EXPECT_STREQ(expect.c_str(), actual.c_str());
 }    
 
-TEST(Vector_test_case, Vector_base_ctor_with_4values)
+TEST(Vector_suite, Vector_base_ctor_with_4values)
 {
     csgp4::Vector v(1.0, 1.0, 1.0, 1.0);
     std::string expect = std::string("X:     1.000, Y:     1.000, Z:     1.000, W:     1.000");
@@ -52,7 +52,7 @@ TEST(Vector_test_case, Vector_base_ctor_with_4values)
     EXPECT_STREQ(expect.c_str(), actual.c_str());
 }    
 
-TEST(Vector_test_case, Vector_base_copy_ctor)
+TEST(Vector_suite, Vector_base_copy_ctor)
 {
     csgp4::Vector v_dst;
     csgp4::Vector v_src(1.0, 1.0, 1.0, 1.0);
@@ -62,7 +62,7 @@ TEST(Vector_test_case, Vector_base_copy_ctor)
     EXPECT_STREQ(expect.c_str(), actual.c_str());
 }    
 
-TEST(Vector_test_case, Vector_operator_subtract)
+TEST(Vector_suite, Vector_operator_subtract)
 {
     csgp4::Vector v_dut;
     csgp4::Vector v_dst(1.0, 1.0, 1.0, 1.0);
@@ -73,7 +73,7 @@ TEST(Vector_test_case, Vector_operator_subtract)
     EXPECT_STREQ(expect.c_str(), actual.c_str());
 }    
 
-TEST(Vector_test_case, Vector_magnitude)
+TEST(Vector_suite, Vector_magnitude)
 {
     double x = 1.0, y = 2.0, z = 3.0;
     csgp4::Vector v(x, y, z, 0.0);
@@ -82,7 +82,7 @@ TEST(Vector_test_case, Vector_magnitude)
     EXPECT_DOUBLE_EQ(expect, actual);
 }    
 
-TEST(Vector_test_case, Vector_dot)
+TEST(Vector_suite, Vector_dot)
 {
     double x1 = 1.0, y1 = 2.0, z1 = 3.0;
     double x2 = 4.0, y2 = 5.0, z2 = 6.0;
@@ -92,7 +92,7 @@ TEST(Vector_test_case, Vector_dot)
     EXPECT_DOUBLE_EQ(expect, actual);
 }    
 
-TEST(Vector_test_case, Vector_streamable)
+TEST(Vector_suite, Vector_streamable)
 {
     std::stringstream oss;
     csgp4::Vector v(1.0, 1.0, 1.0, 1.0);

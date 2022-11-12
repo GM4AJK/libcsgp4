@@ -36,7 +36,7 @@ static std::string expected()
     return expect.str();
 }
 
-TEST(Eci_test_case, Eci_ctor_4args)
+TEST(Eci_suite, Eci_ctor_4args)
 {
     csgp4::DateTime dt(2022, 11, 10, 19, 0, 0);
     csgp4::Eci dut(dt, 56, -3, 50);
@@ -45,7 +45,7 @@ TEST(Eci_test_case, Eci_ctor_4args)
     EXPECT_STREQ(expect.c_str(), actual.c_str());
 }    
 
-TEST(Eci_test_case, Eci_ctor_geodetic)
+TEST(Eci_suite, Eci_ctor_geodetic)
 {
     csgp4::DateTime dt(2022, 11, 10, 19, 0, 0);
     csgp4::CoordGeodetic geo(56, -3, 50);

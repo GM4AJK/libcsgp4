@@ -28,7 +28,7 @@
 #include "CoordGeodetic.h"
 #include "common.h"
 
-TEST(CoordGeodetic_test_case, CoordGeodetic_ctor)
+TEST(CoordGeodetic_suite, CoordGeodetic_ctor)
 {
     csgp4::CoordGeodetic g;
     std::string expect = std::string("Lat:    0.000, Lon:    0.000, Alt:      0.000");
@@ -36,7 +36,7 @@ TEST(CoordGeodetic_test_case, CoordGeodetic_ctor)
     EXPECT_STREQ(expect.c_str(), actual.c_str());
 }
 
-TEST(CoordGeodetic_test_case, CoordGeodetic_operator_assignment)
+TEST(CoordGeodetic_suite, CoordGeodetic_operator_assignment)
 {
     csgp4::CoordGeodetic g_src(1,1,1);
     csgp4::CoordGeodetic g_dst;
@@ -46,7 +46,7 @@ TEST(CoordGeodetic_test_case, CoordGeodetic_operator_assignment)
     EXPECT_STREQ(expect.c_str(), actual.c_str());
 }
 
-TEST(CoordGeodetic_test_case, CoordGeodetic_streamable)
+TEST(CoordGeodetic_suite, CoordGeodetic_streamable)
 {
     std::stringstream oss;
     csgp4::CoordGeodetic v(1,1,1);
