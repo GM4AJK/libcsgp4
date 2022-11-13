@@ -24,7 +24,34 @@ ADD_LIBRARY(csgp4
     ${libcsgp4_SRCS}
 )
 
+SET(libcsgp4_INCS
+    csgp4/Vector.h
+    csgp4/TimeSpan.h
+    csgp4/Util.h
+    csgp4/Globals.h
+    csgp4/CoordGeodetic.h
+    csgp4/DateTime.h
+    csgp4/Eci.h
+    csgp4/CoordTopocentric.h
+    csgp4/DecayedException.h
+    csgp4/Observer.h
+    csgp4/TleException.h
+    csgp4/Tle.h
+    csgp4/OrbitalElements.h
+    csgp4/SatelliteException.h
+    csgp4/SolarPosition.h
+    csgp4/SGP4.h
+)
+
 TARGET_LINK_LIBRARIES(csgp4
     rt
 )
+
+INSTALL(FILES ${libcsgp4_INCS} DESTINATION include/csgp4)
+INSTALL(TARGETS csgp4 LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR})
+
+SET(PACK_RESOURCE_FILE_LICENSE, "${PROJECT_SOURCE_DIR}/LICENSE.txt")
+INCLUDE(CPack)
+
+
 

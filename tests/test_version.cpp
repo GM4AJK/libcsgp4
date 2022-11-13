@@ -30,16 +30,16 @@ using csgp4::version;
 
 TEST(version_suite, version_test)
 {
-	std::stringstream oss;
-	std::string gittag = std::string(GIT_TAG);
-	oss << LIBCSGP4_VERSION; 
-	if(gittag.length() > 0) {
-		oss << "-" << gittag;
-	}
+    std::stringstream oss;
+    std::string gittag = std::string(GIT_TAG);
+    oss << LIBCSGP4_VERSION; 
+    if(gittag.length() > 0) {
+        oss << "-" << gittag;
+    }
 
-	std::string expect = oss.str(); 
-	std::string actual = version::get();
+    std::string expect = oss.str(); 
+    std::string actual = version::get();
 
-	EXPECT_STREQ(expect.c_str(), actual.c_str());
+    EXPECT_STREQ(expect.c_str(), actual.c_str());
 }
 
