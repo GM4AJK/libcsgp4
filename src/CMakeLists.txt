@@ -1,7 +1,7 @@
 
 
 SET(libcsgp4_SRCS
-	version.cpp
+    version.cpp
     Vector.cpp
     TimeSpan.cpp
     Util.cpp
@@ -56,6 +56,7 @@ SET(libcsgp4_SRC_EXCLUDE
     .github
 )
 SET(CPACK_SOURCE_IGNORE_FILES "${libcsgp4_SRC_EXCLUDE}")
+
 SET(PACK_RESOURCE_FILE_LICENSE, "${PROJECT_SOURCE_DIR}/LICENSE.txt")
 INCLUDE(CPack)
 
