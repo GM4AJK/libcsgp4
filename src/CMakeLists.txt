@@ -1,7 +1,7 @@
 
 
 SET(libcsgp4_SRCS
-	version.cpp
+    version.cpp
     Vector.cpp
     TimeSpan.cpp
     Util.cpp
@@ -49,6 +49,13 @@ TARGET_LINK_LIBRARIES(csgp4
 
 INSTALL(FILES ${libcsgp4_INCS} DESTINATION include/csgp4)
 INSTALL(TARGETS csgp4 LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR})
+
+SET(libcsgp4_SRC_EXCLUDE
+    build
+    .git
+    .github
+)
+SET(CPACK_SOURCE_IGNORE_FILES "${libcsgp4_SRC_EXCLUDE}")
 
 SET(PACK_RESOURCE_FILE_LICENSE, "${PROJECT_SOURCE_DIR}/LICENSE.txt")
 INCLUDE(CPack)
