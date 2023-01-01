@@ -23,7 +23,7 @@
 #include <sstream>
 #include <iomanip>
 #include <cmath>
-#include <stdint.h>
+#include <cstdint>
 
 namespace
 {
@@ -54,7 +54,7 @@ namespace csgp4 {
 class TimeSpan
 {
 public:
-    TimeSpan(int64_t ticks)
+    explicit TimeSpan(int64_t ticks)
         : m_ticks(ticks)
     {
     }
@@ -198,7 +198,7 @@ public:
     }
 
 private:
-    int64_t m_ticks;
+    int64_t m_ticks{};
 
     void CalculateTicks(int days,
             int hours,

@@ -39,12 +39,7 @@ public:
     /**
      * Default constructor
      */
-    CoordGeodetic()
-        : latitude(0.0),
-        longitude(0.0),
-        altitude(0.0)
-    {
-    }
+    CoordGeodetic() = default;
 
     /**
      * Constructor
@@ -113,11 +108,11 @@ public:
     }
 
     /** latitude in radians (-PI >= latitude < PI) */
-    double latitude;
+    double latitude{};
     /** latitude in radians (-PI/2 >= latitude <= PI/2) */
-    double longitude;
+    double longitude{};
     /** altitude in kilometers */
-    double altitude;
+    double altitude{};
 };
 
 /**

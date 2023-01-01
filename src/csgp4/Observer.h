@@ -51,7 +51,7 @@ public:
      * Constructor
      * @param[in] geo the observers position
      */
-    Observer(const CoordGeodetic &geo)
+    explicit Observer(const CoordGeodetic &geo)
         : m_geo(geo)
         , m_eci(DateTime(), geo)
     {

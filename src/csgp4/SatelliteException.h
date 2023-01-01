@@ -31,7 +31,7 @@ namespace csgp4
 class SatelliteException : public std::runtime_error
 {
 public:
-    SatelliteException(const char* message)
+    explicit SatelliteException(const char* message)
         : runtime_error(message)
     {
     }

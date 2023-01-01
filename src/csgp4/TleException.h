@@ -37,7 +37,7 @@ public:
      * Constructor
      * @param message Exception message
      */
-    TleException(const char* message)
+    explicit TleException(const char* message)
         : runtime_error(message)
     {
     }
