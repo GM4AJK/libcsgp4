@@ -10,6 +10,7 @@ SET(libcsgp4_SRCS
     DateTime.cpp
     Eci.cpp
     CoordTopocentric.cpp
+    CoordEquatorial.cpp
     DecayedException.cpp
     Observer.cpp
     TleException.cpp
@@ -33,6 +34,7 @@ SET(libcsgp4_INCS
     csgp4/DateTime.h
     csgp4/Eci.h
     csgp4/CoordTopocentric.h
+    csgp4/CoordEquatorial.h
     csgp4/DecayedException.h
     csgp4/Observer.h
     csgp4/TleException.h
