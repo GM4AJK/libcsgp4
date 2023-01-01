@@ -41,13 +41,7 @@ public:
     /**
      * Default constructor
      */
-    CoordTopocentric()
-        : azimuth(0.0)
-        , elevation(0.0)
-        , range(0.0)
-        , range_rate(0.0)
-    {
-    }
+    CoordTopocentric() = default;
 
     /**
      * Constructor
@@ -112,13 +106,13 @@ public:
     }
 
     /** azimuth in radians */
-    double azimuth;
+    double azimuth{};
     /** elevations in radians */
-    double elevation;
+    double elevation{};
     /** range in kilometers */
-    double range;
+    double range{};
     /** range rate in kilometers per second */
-    double range_rate;
+    double range_rate{};
 };
 
 

@@ -78,8 +78,7 @@ public:
      * @param[in] line_one Tle line one
      * @param[in] line_two Tle line two
      */
-    Tle(const std::string& line_one,
-            const std::string& line_two)
+    Tle(std::string& line_one, std::string& line_two)
         : line_one_(line_one)
         , line_two_(line_two)
     {
@@ -92,9 +91,7 @@ public:
      * @param[in] line_one Tle line one
      * @param[in] line_two Tle line two
      */
-    Tle(const std::string& name,
-            const std::string& line_one,
-            const std::string& line_two)
+    Tle(const std::string& name, std::string& line_one, std::string& line_two)
         : name_(name)
         , line_one_(line_one)
         , line_two_(line_two)
@@ -397,18 +394,18 @@ private:
     std::string classification_type_;
     std::string int_designator_;
     DateTime epoch_;
-    double mean_motion_dt2_;
-    double mean_motion_ddt6_;
-    double bstar_;
-    double inclination_;
-    double right_ascending_node_;
-    double eccentricity_;
-    double argument_perigee_;
-    double mean_anomaly_;
-    double mean_motion_;
-    unsigned int ephemeris_type_;
-    unsigned int norad_number_;
-    unsigned int orbit_number_;
+    double mean_motion_dt2_{};
+    double mean_motion_ddt6_{};
+    double bstar_{};
+    double inclination_{};
+    double right_ascending_node_{};
+    double eccentricity_{};
+    double argument_perigee_{};
+    double mean_anomaly_{};
+    double mean_motion_{};
+    unsigned int ephemeris_type_{};
+    unsigned int norad_number_{};
+    unsigned int orbit_number_{};
 
     static const unsigned int TLE_LEN_LINE_DATA = 69;
     static const unsigned int TLE_LEN_LINE_NAME = 22;

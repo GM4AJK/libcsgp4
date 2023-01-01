@@ -78,7 +78,7 @@ public:
      * Constructor
      * @param[in] ticks raw tick value
      */
-    DateTime(int64_t ticks)
+    explicit DateTime(int64_t ticks)
         : m_encoded(ticks)
     {
     }
@@ -480,7 +480,7 @@ public:
 
     DateTime AddMicroseconds(const double microseconds) const
     {
-        int64_t ticks = static_cast<int64_t>(microseconds * TicksPerMicrosecond);
+        auto ticks = static_cast<int64_t>(microseconds * TicksPerMicrosecond);
         return AddTicks(ticks);
     }
 
@@ -633,7 +633,7 @@ public:
      */
     double ToJulian() const
     {
-        TimeSpan ts = TimeSpan(Ticks());
+        auto ts = TimeSpan(Ticks());
         return ts.TotalDays() + 1721425.5;
     }
 
@@ -706,7 +706,7 @@ private:
         val = std::stod(str);
     }
     
-    int64_t m_encoded;
+    int64_t m_encoded{};
 };
 
 inline std::ostream& operator<<(std::ostream& strm, const DateTime& dt)

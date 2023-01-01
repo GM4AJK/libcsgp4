@@ -40,12 +40,12 @@ namespace Util
     void TrimLeft(std::string& s)
     {
         s.erase(s.begin(),
-                std::find_if(s.begin(), s.end(), std::not1(IsDigit())));
+            std::find_if(s.begin(), s.end(), [](unsigned char c){ return std::isgraph(c) != 0; }));
     }
 
     void TrimRight(std::string& s)
     {
-        s.erase(std::find_if(s.rbegin(), s.rend(), std::not1(IsDigit())).base(),
+        s.erase(std::find_if(s.rbegin(), s.rend(), [](unsigned char c){ return std::isgraph(c) != 0; }).base(),
                 s.end());
     }
 
