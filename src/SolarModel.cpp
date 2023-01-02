@@ -16,7 +16,7 @@
 
 #include <cmath>
 
-#include "csgp4/SunModel.h"
+#include "csgp4/SolarModel.h"
 
 #include "csgp4/Globals.h"
 #include "csgp4/Util.h"
@@ -24,20 +24,20 @@
 namespace csgp4
 {
 
-SunModel::SunModel(const DateTime& dt)
+SolarModel::SolarModel(const DateTime& dt)
 {
     Initialise(dt);
 }
 
 void 
-SunModel::Initialise(const DateTime& dt)
+SolarModel::Initialise(const DateTime& dt)
 {
     _atDateTime = dt;
     _atTime_JD  = dt.ToJulian();
 }
 
-CoordsSunModel
-SunModel::Position()
+CoordsSolarModel
+SolarModel::Position()
 {
     double D  = _atDateTime.ToJulian() - 2455196.5;
     double eg = 279.557208; // Mean Ecliptic Longitude in degrees.
@@ -51,7 +51,7 @@ SunModel::Position()
     double ecliptic_lon = v+ wg;
     if(ecliptic_lon > 360.0) ecliptic_lon -= 360.0;
     double ecliptic_lat = 0.0;
-    return CoordsSunModel(ecliptic_lat, Util::DegreesToRadians(ecliptic_lon), Mo, D, N);
+    return CoordsSolarModel(ecliptic_lat, Util::DegreesToRadians(ecliptic_lon), Mo, D, N);
 }
 
 }; // end namespace csgp4

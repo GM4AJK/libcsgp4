@@ -123,15 +123,15 @@ public:
         const double ed = 23.43929167 - (13.0041666e-3 * T) - (166.66666e-9 * (T*T)) - (502.77777e-9 * (T*T*T));
         const double er = Util::DegreesToRadians(ed);
         const double dec = std::asin(
-            std::sin(ecliptic_lat)*std::cos(er) + std::cos(ecliptic_lat)*std::sin(er)*std::sin(ecliptic_lon)
+            std::sin(ecliptic_lat) * std::cos(er) + std::cos(ecliptic_lat) * std::sin(er) * std::sin(ecliptic_lon)
         );
-        const double ra = std::atan(
-            (std::sin(ecliptic_lon)*std::cos(er) - std::tan(ecliptic_lat)*std::sin(er)) /
-                            std::cos(ecliptic_lon)
-        );
+        const double y = std::sin(ecliptic_lon) * std::cos(er) - std::tan(ecliptic_lat) * std::sin(er);
+        const double x = std::cos(ecliptic_lon);
+        const double ra = std::atan2(y, x);
         return CoordEquatorial(
-            dec,
-            ((ra < 0) ? (ra + (M_PI)) : ra),
+            dec, 
+            //((ra<0)?(ra+M_PI_2):ra), //ra, 
+            Util::WrapTwoPI(ra),
             d
         );
     }

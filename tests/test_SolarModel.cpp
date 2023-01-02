@@ -25,13 +25,13 @@
 #include <sstream>
 #include <gtest/gtest.h>
 
-#include "csgp4/SunModel.h"
+#include "csgp4/SolarModel.h"
 
-TEST(SunModel_suite, SunModel_Position)
+TEST(SolarModel_suite, SolarModel_Position)
 {
     // See page 105, section 46 for test setup.
     csgp4::DateTime dt(2003, 7, 27, 0, 0, 0);
-    csgp4::SunModel sp(dt);
+    csgp4::SolarModel sp(dt);
     std::stringstream expect_ss;
     expect_ss << "Lat (degrees):    0.000, Lon (degrees):  123.581" << std::endl;
     expect_ss << "Mo: 201.159, D: -2349.000, N: 204.714";

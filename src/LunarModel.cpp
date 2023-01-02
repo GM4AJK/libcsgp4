@@ -42,8 +42,8 @@ LunarModel::Initialise(const DateTime& dt)
 CoordsLunarModel
 LunarModel::Position()
 {
-    SunModel sp(_atDateTime);
-    CoordsSunModel sun = sp.Position();
+    SolarModel sp(_atDateTime);
+    CoordsSolarModel sun = sp.Position();
     double d2r = M_PI/180.0;
     double lo = 91.929336;	// Moon's mean longitude at epoch 2010.0
     double Po = 130.143076;	// Mean longitude of the perigee at epoch.
@@ -77,7 +77,8 @@ LunarModel::Position()
     if(lm > 360) lm -= 360.0;
     CoordsLunarModel rval = CoordsLunarModel(
         Util::DegreesToRadians(Bm), 
-        Util::DegreesToRadians(lm), 
+        Util::DegreesToRadians(lm),
+        _atDateTime.ToJulian(),        
         sun
     );
     rval.SetJD(_atDateTime.ToJulian());

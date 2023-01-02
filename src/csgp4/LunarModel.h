@@ -27,7 +27,7 @@
 #include <string>
 #include <sstream>
 
-#include "SunModel.h"
+#include "SolarModel.h"
 #include "DateTime.h"
 #include "CoordEcliptic.h"
 #include "CoordEquatorial.h"
@@ -40,9 +40,10 @@ class CoordsLunarModel
 public:
     CoordsLunarModel() = default;
 
-    CoordsLunarModel(double ecliptic_lat, double ecliptic_lon, CoordsSunModel& sun)
+    CoordsLunarModel(double ecliptic_lat, double ecliptic_lon, double jd, CoordsSolarModel& sun)
     {
-        _pos = CoordEcliptic(ecliptic_lat, ecliptic_lon);
+        _pos = CoordEcliptic(ecliptic_lat, ecliptic_lon, jd);
+        _eqt = _pos.asEquatorial(jd);
         _sun = sun;
     }
 
@@ -53,6 +54,7 @@ public:
     CoordsLunarModel(const CoordsLunarModel& e)
     {
         _pos = e._pos;
+        _eqt = e._eqt;
         _sun = e._sun;
     }
 
@@ -65,6 +67,7 @@ public:
         if (this != &e)
         {
             _pos = e._pos;
+            _eqt = e._eqt;
             _sun = e._sun;
         }
         return *this;
@@ -83,8 +86,9 @@ public:
         return *this;
     }
     
-    CoordEcliptic  _pos;
-    CoordsSunModel _sun;
+    CoordEcliptic   _pos;
+    CoordEquatorial _eqt;
+    CoordsSolarModel  _sun;
 };
 
 /**

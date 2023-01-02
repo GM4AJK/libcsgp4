@@ -33,12 +33,12 @@
 namespace csgp4
 {
 
-class CoordsSunModel
+class CoordsSolarModel
 {
 public:
-    CoordsSunModel() = default;
+    CoordsSolarModel() = default;
 
-    CoordsSunModel(double ecliptic_lat, double ecliptic_lon, double Mo, double D, double N) :
+    CoordsSolarModel(double ecliptic_lat, double ecliptic_lon, double Mo, double D, double N) :
         _ecliptic_lat(ecliptic_lat),
         _ecliptic_lon(ecliptic_lon),
         _Mo(Mo),
@@ -50,7 +50,7 @@ public:
      * Copy constructor
      * @param[in] e object to copy from
      */
-    CoordsSunModel(const CoordsSunModel& e)
+    CoordsSolarModel(const CoordsSolarModel& e)
     {
         _ecliptic_lat = e._ecliptic_lat;
         _ecliptic_lon = e._ecliptic_lon;
@@ -63,7 +63,7 @@ public:
      * Assignment operator
      * @param[in] e object to copy from
      */
-    CoordsSunModel& operator=(const CoordsSunModel& e)
+    CoordsSolarModel& operator=(const CoordsSolarModel& e)
     {
         if (this != &e)
         {
@@ -98,7 +98,7 @@ public:
 /**
  * @brief Find the position of the sun in Equatorial coordinate system.
  */
-class SunModel
+class SolarModel
 {
 private:
 
@@ -108,14 +108,14 @@ private:
 
 public:
 
-    SunModel() = default;
+    SolarModel() = default;
 
-    SunModel(const DateTime& dt);
+    SolarModel(const DateTime& dt);
 
     double   GetAtDateJD(void) { return _atTime_JD; }
     DateTime GetAtDate(void)   { return _atDateTime; }
     
-    CoordsSunModel Position(void);
+    CoordsSolarModel Position(void);
 };
 
 }; // end namespace csgp4

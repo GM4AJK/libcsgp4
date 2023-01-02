@@ -19,7 +19,7 @@ SET(libcsgp4_SRCS
     SatelliteException.cpp
     SolarPosition.cpp
     SGP4.cpp
-    SunModel.cpp
+    SolarModel.cpp
     LunarModel.cpp
     CoordEcliptic.cpp
 )
@@ -46,7 +46,7 @@ SET(libcsgp4_INCS
     csgp4/SatelliteException.h
     csgp4/SolarPosition.h
     csgp4/SGP4.h
-    csgp4/SunModel.h
+    csgp4/SolarModel.h
     csgp4/LunarModel.h
     csgp4/CoordEcliptic.h
 )

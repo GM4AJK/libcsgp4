@@ -31,12 +31,30 @@ TEST(LunarModel_suite, LunarModel_Position)
 {
     // See page 166, section 65 for test setup.
     csgp4::DateTime dt(2003, 9, 1, 0, 0, 0);
-    csgp4::LunarModel moon(dt);
-    std::stringstream expect_ss;
-    expect_ss << "Ecliptic lat:    1.690, ecliptic lon:  215.175, JD: 2452883.500";
+    csgp4::LunarModel moon(dt);    
     auto dut = moon.Position();
-    std::string expect = expect_ss.str();
-    std::string actual = dut.ToString();
-    EXPECT_STREQ(expect.c_str(), actual.c_str());
+    {
+        std::stringstream expect_ss;
+        expect_ss << "Ecliptic lat:    1.690, ecliptic lon:  215.175, JD: 2452883.500";
+        std::string expect = expect_ss.str();
+        std::string actual = dut.ToString();
+        EXPECT_STREQ(expect.c_str(), actual.c_str());
+    }
+    {
+        std::stringstream expect_ss;
+        expect_ss << "Dec:  -11.653, RA:  213.464, JD: 2452883.500";
+        std::string expect = expect_ss.str();
+        std::string actual = dut._eqt.ToString();
+        EXPECT_STREQ(expect.c_str(), actual.c_str());
+        EXPECT_EQ(dut._eqt.JD(), dt.ToJulian());
+    }
+    {
+        csgp4::Vector v = dut._eqt.HourAngle();
+        std::stringstream expect_ss;
+        expect_ss << "X:    14.000, Y:    13.000, Z:    51.247, W:    14.231";
+        std::string expect = expect_ss.str();
+        std::string actual = v.ToString();
+        EXPECT_STREQ(expect.c_str(), actual.c_str());
+    }
 }
 
