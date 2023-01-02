@@ -19,6 +19,9 @@ SET(libcsgp4_SRCS
     SatelliteException.cpp
     SolarPosition.cpp
     SGP4.cpp
+    SolarModel.cpp
+    LunarModel.cpp
+    CoordEcliptic.cpp
 )
 
 ADD_LIBRARY(csgp4
@@ -43,6 +46,9 @@ SET(libcsgp4_INCS
     csgp4/SatelliteException.h
     csgp4/SolarPosition.h
     csgp4/SGP4.h
+    csgp4/SolarModel.h
+    csgp4/LunarModel.h
+    csgp4/CoordEcliptic.h
 )
 
 TARGET_LINK_LIBRARIES(csgp4

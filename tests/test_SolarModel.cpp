@@ -20,40 +20,24 @@
  *   IN THE SOFTWARE.
  ***********************************************************************************/
 
+#include <cmath>
 #include <string>
+#include <sstream>
 #include <gtest/gtest.h>
 
-#include "common.h"
-#include "csgp4/config.h"
-#include "csgp4/CoordEquatorial.h"
+#include "csgp4/SolarModel.h"
 
-TEST(CoordEquatorial_suite, CoordEquatorial_ctor)
+TEST(SolarModel_suite, SolarModel_Position)
 {
-    csgp4::CoordEquatorial ct(d2r(180.0), d2r(45.0));
-    std::string expect = std::string("Dec:  180.000, RA:   45.000, JD:    0.000");
-    std::string actual = ct.ToString();
-    EXPECT_STREQ(expect.c_str(), actual.c_str());
-}
-
-TEST(CoordEquatorial_suite, CoordEquatorial_equality)
-{
-    csgp4::CoordEquatorial c1(d2r(180.0), d2r(45.0));
-    csgp4::CoordEquatorial c2(d2r(180.0), d2r(45.0));
-    EXPECT_TRUE(c1 == c2);
-}
-
-TEST(CoordEquatorial_suite, CoordEquatorial_assignment)
-{
-    csgp4::CoordEquatorial c1(d2r(180.0), d2r(45.0));
-    auto c2 = c1;
-    EXPECT_TRUE(c1 == c2);
-}
-
-TEST(CoordEquatorial_suite, CoordEquatorial_set)
-{
-    csgp4::CoordEquatorial dut;
-    dut.Dec(d2r(180.0)).RA(d2r(45.0));
-    std::string expect = std::string("Dec:  180.000, RA:   45.000, JD:    0.000");
+    // See page 105, section 46 for test setup.
+    csgp4::DateTime dt(2003, 7, 27, 0, 0, 0);
+    csgp4::SolarModel sp(dt);
+    std::stringstream expect_ss;
+    expect_ss << "Lat (degrees):    0.000, Lon (degrees):  123.581" << std::endl;
+    expect_ss << "Mo: 201.159, D: -2349.000, N: 204.714";
+    auto dut = sp.Position();
+    std::string expect = expect_ss.str();
     std::string actual = dut.ToString();
     EXPECT_STREQ(expect.c_str(), actual.c_str());
 }
+
