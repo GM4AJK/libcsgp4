@@ -1,5 +1,5 @@
 /*********************************************************************************
- *   Copyright (c) 2022 Andy Kirkham  All rights reserved.
+ *   Copyright (c) 2022 Andy Kirkham
  *
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
  *   of this software and associated documentation files (the "Software"),
@@ -25,35 +25,42 @@
 
 #include "common.h"
 #include "csgp4/config.h"
+#include "csgp4/Vector.h"
+#include "csgp4/DateTime.h"
+#include "csgp4/CoordEcliptic.h"
 #include "csgp4/CoordEquatorial.h"
 
-TEST(CoordEquatorial_suite, CoordEquatorial_ctor)
+TEST(CoordEcliptic_suite, CoordEcliptic_ctor)
 {
-    csgp4::CoordEquatorial ct(d2r(180.0), d2r(45.0));
-    std::string expect = std::string("Dec:  180.000, RA:   45.000, JD:    0.000");
-    std::string actual = ct.ToString();
-    EXPECT_STREQ(expect.c_str(), actual.c_str());
-}
-
-TEST(CoordEquatorial_suite, CoordEquatorial_equality)
-{
-    csgp4::CoordEquatorial c1(d2r(180.0), d2r(45.0));
-    csgp4::CoordEquatorial c2(d2r(180.0), d2r(45.0));
-    EXPECT_TRUE(c1 == c2);
-}
-
-TEST(CoordEquatorial_suite, CoordEquatorial_assignment)
-{
-    csgp4::CoordEquatorial c1(d2r(180.0), d2r(45.0));
-    auto c2 = c1;
-    EXPECT_TRUE(c1 == c2);
-}
-
-TEST(CoordEquatorial_suite, CoordEquatorial_set)
-{
-    csgp4::CoordEquatorial dut;
-    dut.Dec(d2r(180.0)).RA(d2r(45.0));
-    std::string expect = std::string("Dec:  180.000, RA:   45.000, JD:    0.000");
+    csgp4::CoordEcliptic dut(d2r(180.0), d2r(45.0));
+    std::string expect = std::string("Ecliptic lat:  180.000, ecliptic lon:   45.000, JD:    0.000");
     std::string actual = dut.ToString();
     EXPECT_STREQ(expect.c_str(), actual.c_str());
+}
+
+TEST(CoordEcliptic_suite, CoordEcliptic_ctor2)
+{
+    csgp4::CoordEcliptic dut(d2r(180.0), d2r(45.0), 1.5);
+    std::string expect = std::string("Ecliptic lat:  180.000, ecliptic lon:   45.000, JD:    1.500");
+    std::string actual = dut.ToString();
+    EXPECT_STREQ(expect.c_str(), actual.c_str());
+}
+
+TEST(CoordEcliptic_suite, CoordEcliptic_asEquatorial)
+{
+    // Page 53, section 27
+    csgp4::DateTime dt(2009, 7, 6);
+    csgp4::CoordEcliptic dut(d2r(4.875277778), d2r(139.6861111), dt.ToJulian());
+    csgp4::CoordEquatorial res = dut.asEquatorial();
+    {
+        std::string expect = std::string("Dec:   19.535, RA:  143.722, JD: 2455018.500");
+        std::string actual = res.ToString();
+        EXPECT_STREQ(expect.c_str(), actual.c_str());
+    }
+    csgp4::Vector v = res.HourAngle();
+    {
+        std::string expect = std::string("X:     9.000, Y:    34.000, Z:    53.321, W:     9.581");
+        std::string actual = v.ToString();
+        EXPECT_STREQ(expect.c_str(), actual.c_str());
+    }
 }
