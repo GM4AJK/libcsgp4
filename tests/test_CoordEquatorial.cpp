@@ -30,7 +30,7 @@
 TEST(CoordEquatorial_suite, CoordEquatorial_ctor)
 {
     csgp4::CoordEquatorial ct(d2r(180.0), d2r(45.0));
-    std::string expect = std::string("Dec:  180.000, RA:   45.000, JD:    0.000");
+    std::string expect = std::string("Dec:  180.000, RA:   45.000");
     std::string actual = ct.ToString();
     EXPECT_STREQ(expect.c_str(), actual.c_str());
 }
@@ -53,7 +53,7 @@ TEST(CoordEquatorial_suite, CoordEquatorial_set)
 {
     csgp4::CoordEquatorial dut;
     dut.Dec(d2r(180.0)).RA(d2r(45.0));
-    std::string expect = std::string("Dec:  180.000, RA:   45.000, JD:    0.000");
+    std::string expect = std::string("Dec:  180.000, RA:   45.000");
     std::string actual = dut.ToString();
     EXPECT_STREQ(expect.c_str(), actual.c_str());
 }
