@@ -39,7 +39,4 @@ ADD_SGP4_TEST(test_OrbitalElements)
 ADD_SGP4_TEST(test_SGP4)
 ADD_SGP4_TEST(test_Overview)
 ADD_SGP4_TEST(test_Utils)
-ADD_SGP4_TEST(test_SolarModel)
-ADD_SGP4_TEST(test_LunarModel)
-ADD_SGP4_TEST(test_CoordEcliptic)
 

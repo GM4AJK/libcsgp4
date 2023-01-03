@@ -18,7 +18,6 @@
 #pragma once
 
 #include "csgp4/Util.h"
-#include "csgp4/Vector.h"
 
 #include <string>
 #include <sstream>
@@ -50,21 +49,6 @@ public:
             double ra_in)
         : dec(dec_in)
         , ra(ra_in)
-        , jd(0.0)
-    {}
-
-    /**
-     * Constructor
-     * @param[in] dec_in declination in radians
-     * @param[in] ra_in right ascension in radians
-     */
-    CoordEquatorial(
-            double dec_in,
-            double ra_in,
-            double jd_in)
-        : dec(dec_in)
-        , ra(ra_in)
-        , jd(jd_in)
     {}
 
     /**
@@ -75,7 +59,6 @@ public:
     {
         dec = equa.dec;
         ra = equa.ra;
-        jd = equa.jd;
     }
 
     /**
@@ -88,7 +71,6 @@ public:
         {
             dec = equa.dec;
             ra = equa.ra;
-            jd = equa.jd;
         }
         return *this;
     }
@@ -112,7 +94,6 @@ public:
         ss << std::right << std::fixed << std::setprecision(3);
         ss << "Dec: " << std::setw(8) << Util::RadiansToDegrees(dec);
         ss << ", RA: " << std::setw(8) << Util::RadiansToDegrees(ra);
-        ss << ", JD: " << std::setw(8) << jd;
         return ss.str();
     }
 
@@ -123,7 +104,7 @@ public:
     double Dec(void) {
         return dec;
     }
-
+    
     /**
      * Get the right ascension value in radians
      * @returns double
@@ -134,15 +115,6 @@ public:
     }
 
     /**
-     * Get the option Julian date value
-     * @returns double
-     */
-    double JD(void)
-    {
-        return jd;
-    }
-    
-    /**
      * Set the declination value in radians
      * @returns this
      */
@@ -150,7 +122,7 @@ public:
         dec = d;
         return *this;
     }
-
+    
     /**
      * Get the right ascension value in radians
      * @returns double
@@ -161,42 +133,13 @@ public:
         return *this;
     }
 
-    /**
-     * Set the option Julian date value in radians
-     * @returns double
-     */
-    CoordEquatorial& JD(double d)
-    {
-        jd = d;
-        return *this;
-    }
-    
-    Vector HourAngle(void)
-    {
-        Vector v;
-        const double rad = Util::RadiansToDegrees(ra);
-        const double rah = rad / 15.0;
-        double n, whole, frac;
-        frac = std::modf(rah, &whole);
-        v.x = whole;        
-        n = 60 * frac;
-        frac = std::modf(n, &whole);
-        v.y = whole;        
-        v.z = 60 * frac;
-        v.w = rah;
-        return v;
-    }
-
 private:
 
     /** declination in radians */
     double dec{};
-
+    
     /** right ascension in radians */
     double ra{};
-    
-    /** option julian date */
-    double jd{};
 };
 
 
